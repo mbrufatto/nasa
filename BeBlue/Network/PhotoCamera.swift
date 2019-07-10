@@ -10,8 +10,11 @@ import Foundation
 
 class PhotoCamera: Decodable {
     var cameraName: String
+    var fullName: String
     
     enum CodingKeys: String, CodingKey {
         case cameraName = "name"
+        case fullName = "full_name"
+        
     }
 }

@@ -10,10 +10,12 @@ import Foundation
 
 struct Photo: Decodable {
     
+    var id: Int = 0
     var urlPhoto: String = ""
     var camera: PhotoCamera?
     
     enum CodingKeys: String, CodingKey {
+        case id
         case urlPhoto = "img_src"
         case camera
     }

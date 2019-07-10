@@ -105,7 +105,7 @@ extension PhotoViewController: UICollectionViewDataSource {
             
             let photo = arrayPhotos[indexPath.row]
             
-            
+            cell.getImage(urlPhoto: photo.urlPhoto)
             
             print(photo)
             

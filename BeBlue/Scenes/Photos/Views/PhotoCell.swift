@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class PhotoCell: UICollectionViewCell {
     
@@ -40,6 +41,15 @@ class PhotoCell: UICollectionViewCell {
             image.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             image.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+    }
+    
+    func getImage(urlPhoto: String) {
+        self.image.af_setImage( withURL: URL(string: urlPhoto)!,
+                                    placeholderImage: UIImage(named: "lobo.jpg"),
+                                    imageTransition: .crossDissolve(0.2),
+                                    completion: { response in
+                                        self.image.image = response.result.value
+        })
     }
 
 }

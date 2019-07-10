@@ -14,7 +14,6 @@ import UIKit
 
 protocol PhotoBusinessLogic {
     func doLoadInitialData(request: PhotoScene.Load.Request)
-    func doLoadImage()
 }
 
 protocol PhotoDataStore {

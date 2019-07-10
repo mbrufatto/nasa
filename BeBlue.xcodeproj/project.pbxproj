@@ -37,6 +37,8 @@
 		002C497322CECC5F006F586F /* PhotoBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002C497122CECC5F006F586F /* PhotoBase.swift */; };
 		002C497522CECC82006F586F /* PhotoCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002C497422CECC82006F586F /* PhotoCamera.swift */; };
 		002C497622CECC82006F586F /* PhotoCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002C497422CECC82006F586F /* PhotoCamera.swift */; };
+		901BE5421AEDF9023198C968 /* Pods_BeBlueTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59CA38D81043E3F8CD0413C0 /* Pods_BeBlueTests.framework */; };
+		CA4D790C71F461274BE4EF47 /* Pods_BeBlue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09C635A80D7F9E0A5487550 /* Pods_BeBlue.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,12 @@
 		002C496E22CEBDA4006F586F /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		002C497122CECC5F006F586F /* PhotoBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBase.swift; sourceTree = "<group>"; };
 		002C497422CECC82006F586F /* PhotoCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCamera.swift; sourceTree = "<group>"; };
+		233B23DED07AE07EE5CDF227 /* Pods-BeBlueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeBlueTests.release.xcconfig"; path = "Target Support Files/Pods-BeBlueTests/Pods-BeBlueTests.release.xcconfig"; sourceTree = "<group>"; };
+		59CA38D81043E3F8CD0413C0 /* Pods_BeBlueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeBlueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9EBF14CB637000ECB16CDC7 /* Pods-BeBlue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeBlue.release.xcconfig"; path = "Target Support Files/Pods-BeBlue/Pods-BeBlue.release.xcconfig"; sourceTree = "<group>"; };
+		C09C635A80D7F9E0A5487550 /* Pods_BeBlue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeBlue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3E4CE7611413BDC42E3E73B /* Pods-BeBlueTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeBlueTests.debug.xcconfig"; path = "Target Support Files/Pods-BeBlueTests/Pods-BeBlueTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E23E9BFF1B3B1BFA4772710F /* Pods-BeBlue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeBlue.debug.xcconfig"; path = "Target Support Files/Pods-BeBlue/Pods-BeBlue.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA4D790C71F461274BE4EF47 /* Pods_BeBlue.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				901BE5421AEDF9023198C968 /* Pods_BeBlueTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +107,8 @@
 				002C492522CEACBA006F586F /* BeBlue */,
 				002C493A22CEACBC006F586F /* BeBlueTests */,
 				002C492422CEACBA006F586F /* Products */,
+				70C7E296E56A4E40722D3506 /* Pods */,
+				4E9193980CD3D68302EFEBB7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,6 +210,27 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4E9193980CD3D68302EFEBB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C09C635A80D7F9E0A5487550 /* Pods_BeBlue.framework */,
+				59CA38D81043E3F8CD0413C0 /* Pods_BeBlueTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		70C7E296E56A4E40722D3506 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E23E9BFF1B3B1BFA4772710F /* Pods-BeBlue.debug.xcconfig */,
+				A9EBF14CB637000ECB16CDC7 /* Pods-BeBlue.release.xcconfig */,
+				C3E4CE7611413BDC42E3E73B /* Pods-BeBlueTests.debug.xcconfig */,
+				233B23DED07AE07EE5CDF227 /* Pods-BeBlueTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,9 +238,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 002C494022CEACBC006F586F /* Build configuration list for PBXNativeTarget "BeBlue" */;
 			buildPhases = (
+				9F55F163E773CBA3537CAE18 /* [CP] Check Pods Manifest.lock */,
 				002C491F22CEACBA006F586F /* Sources */,
 				002C492022CEACBA006F586F /* Frameworks */,
 				002C492122CEACBA006F586F /* Resources */,
+				4DEB9A8C94EBCB69A73AE4F2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -222,6 +257,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 002C494322CEACBC006F586F /* Build configuration list for PBXNativeTarget "BeBlueTests" */;
 			buildPhases = (
+				99F94BAEB98CAC8B95E5B7B7 /* [CP] Check Pods Manifest.lock */,
 				002C493322CEACBC006F586F /* Sources */,
 				002C493422CEACBC006F586F /* Frameworks */,
 				002C493522CEACBC006F586F /* Resources */,
@@ -292,6 +328,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4DEB9A8C94EBCB69A73AE4F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeBlue/Pods-BeBlue-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeBlue/Pods-BeBlue-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeBlue/Pods-BeBlue-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99F94BAEB98CAC8B95E5B7B7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeBlueTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F55F163E773CBA3537CAE18 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeBlue-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		002C491F22CEACBA006F586F /* Sources */ = {
@@ -476,6 +576,7 @@
 		};
 		002C494122CEACBC006F586F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E23E9BFF1B3B1BFA4772710F /* Pods-BeBlue.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -494,6 +595,7 @@
 		};
 		002C494222CEACBC006F586F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9EBF14CB637000ECB16CDC7 /* Pods-BeBlue.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -512,6 +614,7 @@
 		};
 		002C494422CEACBC006F586F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3E4CE7611413BDC42E3E73B /* Pods-BeBlueTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -533,6 +636,7 @@
 		};
 		002C494522CEACBC006F586F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 233B23DED07AE07EE5CDF227 /* Pods-BeBlueTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
