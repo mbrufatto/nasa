@@ -22,6 +22,7 @@ class PhotoViewController: UIViewController, PhotoDisplayLogic {
     
     let photoView = PhotoCollectionView()
     var arrayPhotos = [Photo]()
+    var previousSelectedCamera: Int = 0
     
     // MARK: Object lifecycle
     
@@ -74,7 +75,11 @@ class PhotoViewController: UIViewController, PhotoDisplayLogic {
         
         photoView.collectionView.dataSource = self
         photoView.collectionView.delegate = self
-    
+        
+        photoView.segmentControll.addTarget(self, action: #selector(changeCamera(_:)), for: .valueChanged)
+        photoView.segmentControll.selectedSegmentIndex = 0
+        
+//        requestForCameraPhotos()
         loadInitialData()
     }
     
@@ -83,7 +88,7 @@ class PhotoViewController: UIViewController, PhotoDisplayLogic {
     //@IBOutlet weak var nameTextField: UITextField!
     
     func loadInitialData() {
-        let request = PhotoScene.Load.Request()
+        let request = PhotoScene.Data.Request(cameraName: "curiosity", date: Date())
         interactor?.doLoadInitialData(request: request)
     }
     
@@ -91,6 +96,20 @@ class PhotoViewController: UIViewController, PhotoDisplayLogic {
         arrayPhotos = viewModel.photos
         photoView.collectionView.reloadData()
     }
+    
+    @objc func changeCamera(_ sender:UISegmentedControl ) {
+        if previousSelectedCamera != photoView.segmentControll.selectedSegmentIndex {
+            requestForCameraPhotos()
+        }
+    }
+    
+    func requestForCameraPhotos() {
+        guard let cameraId = RoverId(rawValue: photoView.segmentControll.selectedSegmentIndex) else { return }
+        previousSelectedCamera = photoView.segmentControll.selectedSegmentIndex
+        let request = PhotoScene.Data.Request(cameraName: cameraId.name, date: Date())
+        interactor?.doRequestPhotos(request: request)
+    }
+    
 }
 
 extension PhotoViewController: UICollectionViewDataSource {

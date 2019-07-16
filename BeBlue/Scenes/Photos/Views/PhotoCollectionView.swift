@@ -31,8 +31,6 @@ class PhotoCollectionView: UIView {
     }
     
     func setupComponents() {
-        
-        segmentControll.selectedSegmentIndex = 0
         segmentControll.layer.cornerRadius = 5.0
         
         setupCollectionView()

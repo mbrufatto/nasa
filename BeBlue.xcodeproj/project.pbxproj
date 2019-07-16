@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,6 +37,8 @@
 		002C497322CECC5F006F586F /* PhotoBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002C497122CECC5F006F586F /* PhotoBase.swift */; };
 		002C497522CECC82006F586F /* PhotoCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002C497422CECC82006F586F /* PhotoCamera.swift */; };
 		002C497622CECC82006F586F /* PhotoCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002C497422CECC82006F586F /* PhotoCamera.swift */; };
+		00425C1D22DE1AF900A7EEE8 /* RoverId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00425C1C22DE1AF900A7EEE8 /* RoverId.swift */; };
+		00425C1F22DE1EB100A7EEE8 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00425C1E22DE1EB100A7EEE8 /* DateExtension.swift */; };
 		901BE5421AEDF9023198C968 /* Pods_BeBlueTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59CA38D81043E3F8CD0413C0 /* Pods_BeBlueTests.framework */; };
 		CA4D790C71F461274BE4EF47 /* Pods_BeBlue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09C635A80D7F9E0A5487550 /* Pods_BeBlue.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +75,8 @@
 		002C496E22CEBDA4006F586F /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		002C497122CECC5F006F586F /* PhotoBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBase.swift; sourceTree = "<group>"; };
 		002C497422CECC82006F586F /* PhotoCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCamera.swift; sourceTree = "<group>"; };
+		00425C1C22DE1AF900A7EEE8 /* RoverId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverId.swift; sourceTree = "<group>"; };
+		00425C1E22DE1EB100A7EEE8 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		233B23DED07AE07EE5CDF227 /* Pods-BeBlueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeBlueTests.release.xcconfig"; path = "Target Support Files/Pods-BeBlueTests/Pods-BeBlueTests.release.xcconfig"; sourceTree = "<group>"; };
 		59CA38D81043E3F8CD0413C0 /* Pods_BeBlueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeBlueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9EBF14CB637000ECB16CDC7 /* Pods-BeBlue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeBlue.release.xcconfig"; path = "Target Support Files/Pods-BeBlue/Pods-BeBlue.release.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 				002C496E22CEBDA4006F586F /* Photo.swift */,
 				002C497122CECC5F006F586F /* PhotoBase.swift */,
 				002C497422CECC82006F586F /* PhotoCamera.swift */,
+				00425C1C22DE1AF900A7EEE8 /* RoverId.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				002C496222CEB1D5006F586F /* UIView.swift */,
+				00425C1E22DE1EB100A7EEE8 /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -227,7 +233,6 @@
 				C3E4CE7611413BDC42E3E73B /* Pods-BeBlueTests.debug.xcconfig */,
 				233B23DED07AE07EE5CDF227 /* Pods-BeBlueTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -411,6 +416,8 @@
 				002C495622CEB055006F586F /* PhotoViewController.swift in Sources */,
 				002C496322CEB1D5006F586F /* UIView.swift in Sources */,
 				002C496922CEBB64006F586F /* PhotoCell.swift in Sources */,
+				00425C1D22DE1AF900A7EEE8 /* RoverId.swift in Sources */,
+				00425C1F22DE1EB100A7EEE8 /* DateExtension.swift in Sources */,
 				002C495822CEB055006F586F /* PhotoInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

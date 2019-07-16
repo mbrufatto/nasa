@@ -13,7 +13,12 @@
 import UIKit
 
 enum PhotoScene {
-    // MARK: Use cases
+    enum Data {
+        struct Request {
+            var cameraName: String
+            var date: Date
+        }
+    }
     
     enum Load {
         struct Request {
@@ -23,16 +28,6 @@ enum PhotoScene {
         }
         struct ViewModel {
             let photos: [Photo]
-        }
-    }
-    
-    enum loadImage {
-        struct Request {
-            let photo: Photo
-        }
-        struct Response {
-        }
-        struct ViewModel {
         }
     }
 }

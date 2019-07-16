@@ -15,8 +15,12 @@ import UIKit
 class PhotoWorker {
     
     func fetchPhotos(camera: String, date: String, completionHandler: @escaping ([Photo]) -> Void) {
+        print(camera)
+        print(date)
         NetworkManager.shared.getPhotos(withCameraAndDate: camera, date: date) { photos in
             completionHandler(photos)
         }
     }
+    
+    
 }
