@@ -19,13 +19,14 @@ protocol PhotoBusinessLogic {
 }
 
 protocol PhotoDataStore {
-    var photo: Photo { get set }
+    var photo: Photo? { get set }
 }
 
 class PhotoInteractor: PhotoBusinessLogic, PhotoDataStore {
+    
     var presenter: PhotoPresentationLogic?
     var worker: PhotoWorker?
-    var photo: Photo = Photo()
+    var photo: Photo?
     
     // MARK: Do something
     
@@ -57,6 +58,7 @@ class PhotoInteractor: PhotoBusinessLogic, PhotoDataStore {
     }
     
     func doLoadPhotoDetail(request: PhotoScene.PhotoDetail.Request) {
+        photo = request.photo
         let response = PhotoScene.PhotoDetail.Response()
         presenter?.presentPhotoDetail(response: response)
     }

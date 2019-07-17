@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class PhotoDetailView: UIView {
 
@@ -32,10 +33,11 @@ class PhotoDetailView: UIView {
         
         backgroundColor = UIColor.white
         
+        camaraNameLabel.textAlignment = .center
+        
         addSubviewForAutolayout(camaraNameLabel)
         addSubviewForAutolayout(photo)
     }
-    
     
     func setupConstraints() {
         
@@ -46,9 +48,19 @@ class PhotoDetailView: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            photo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10.0),
-            photo.topAnchor.constraint(equalTo: photo.bottomAnchor, constant: 8.0),
-            photo.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10.0)
+            photo.topAnchor.constraint(equalTo: camaraNameLabel.bottomAnchor, constant: 15.0),
+            photo.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
+            photo.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
+            photo.heightAnchor.constraint(equalToConstant: 250)
         ])
+    }
+    
+    func getImage(urlPhoto: String) {
+        self.photo.af_setImage( withURL: URL(string: urlPhoto)!,
+                                placeholderImage: UIImage(named: "lobo.jpg"),
+                                imageTransition: .crossDissolve(0.2),
+                                completion: { response in
+                                    self.photo.image = response.result.value
+        })
     }
 }

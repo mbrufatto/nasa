@@ -62,6 +62,9 @@ class PhotoDetailViewController: UIViewController, PhotoDetailDisplayLogic {
     }
     
     // MARK: View lifecycle
+    override func loadView() {
+        view = photoDetailView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,9 +84,7 @@ class PhotoDetailViewController: UIViewController, PhotoDetailDisplayLogic {
     }
     
     func displayInitialData(viewModel: PhotoDetailScene.Load.ViewModel) {
-        let photoVM = viewModel.photo
-        print(photoVM)
-        print(photoVM.camera?.cameraName as Any)
-        print(photoVM.urlPhoto)
+        photoDetailView.camaraNameLabel.text = viewModel.photo.camera?.cameraName
+        photoDetailView.getImage(urlPhoto: viewModel.photo.urlPhoto)
     }
 }
