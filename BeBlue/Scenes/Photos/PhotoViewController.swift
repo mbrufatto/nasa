@@ -14,6 +14,7 @@ import UIKit
 
 protocol PhotoDisplayLogic: class {
     func displayInitialData(viewModel: PhotoScene.Load.ViewModel)
+    func displayPhotoDetail(viewModel: PhotoScene.PhotoDetail.ViewModel)
 }
 
 class PhotoViewController: UIViewController, PhotoDisplayLogic {
@@ -88,13 +89,17 @@ class PhotoViewController: UIViewController, PhotoDisplayLogic {
     //@IBOutlet weak var nameTextField: UITextField!
     
     func loadInitialData() {
-        let request = PhotoScene.Data.Request(cameraName: "curiosity", date: Date())
+        let request = PhotoScene.Load.Request(cameraName: "curiosity", date: Date())
         interactor?.doLoadInitialData(request: request)
     }
     
     func displayInitialData(viewModel: PhotoScene.Load.ViewModel) {
         arrayPhotos = viewModel.photos
         photoView.collectionView.reloadData()
+    }
+    
+    func displayPhotoDetail(viewModel: PhotoScene.PhotoDetail.ViewModel) {
+        router?.routeToPhotoDetail()
     }
     
     @objc func changeCamera(_ sender:UISegmentedControl ) {
@@ -104,9 +109,9 @@ class PhotoViewController: UIViewController, PhotoDisplayLogic {
     }
     
     func requestForCameraPhotos() {
-        guard let cameraId = RoverId(rawValue: photoView.segmentControll.selectedSegmentIndex) else { return }
+        guard let cameraId = CameraId(rawValue: photoView.segmentControll.selectedSegmentIndex) else { return }
         previousSelectedCamera = photoView.segmentControll.selectedSegmentIndex
-        let request = PhotoScene.Data.Request(cameraName: cameraId.name, date: Date())
+        let request = PhotoScene.Load.Request(cameraName: cameraId.name, date: Date())
         interactor?.doRequestPhotos(request: request)
     }
     
@@ -126,14 +131,20 @@ extension PhotoViewController: UICollectionViewDataSource {
             
             cell.getImage(urlPhoto: photo.urlPhoto)
             
-            print(photo)
-            
             return cell
         } else {
             return UICollectionViewCell()
         }
     }
+}
+
+extension PhotoViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photo = arrayPhotos[indexPath.row]
+        let request = PhotoScene.PhotoDetail.Request(photo: photo)
+        interactor?.doLoadPhotoDetail(request: request)
+    }
 }
 
 extension PhotoViewController: UICollectionViewDelegateFlowLayout {

@@ -13,25 +13,28 @@
 import UIKit
 
 protocol PhotoBusinessLogic {
-    func doLoadInitialData(request: PhotoScene.Data.Request)
-    func doRequestPhotos(request: PhotoScene.Data.Request)
+    func doLoadInitialData(request: PhotoScene.Load.Request)
+    func doRequestPhotos(request: PhotoScene.Load.Request)
+    func doLoadPhotoDetail(request: PhotoScene.PhotoDetail.Request)
 }
 
 protocol PhotoDataStore {
+    var photo: Photo { get set }
 }
 
 class PhotoInteractor: PhotoBusinessLogic, PhotoDataStore {
     var presenter: PhotoPresentationLogic?
     var worker: PhotoWorker?
+    var photo: Photo = Photo()
     
     // MARK: Do something
     
-    func doLoadInitialData(request: PhotoScene.Data.Request) {
+    func doLoadInitialData(request: PhotoScene.Load.Request) {
         let dateString = request.date.convertToString(onFormat: "yyyy-M-d")
         worker = PhotoWorker()
         worker?.fetchPhotos(camera: request.cameraName, date: dateString, completionHandler: { photos in
             if photos.count == 0 {
-                let newRequest = PhotoScene.Data.Request(cameraName: request.cameraName, date: request.date.dateByAdding(days: -1))
+                let newRequest = PhotoScene.Load.Request(cameraName: request.cameraName, date: request.date.dateByAdding(days: -1))
                 self.doLoadInitialData(request: newRequest)
             } else {
                 let response = PhotoScene.Load.Response(photos: photos)
@@ -40,16 +43,21 @@ class PhotoInteractor: PhotoBusinessLogic, PhotoDataStore {
         })
     }
     
-    func doRequestPhotos(request: PhotoScene.Data.Request) {
+    func doRequestPhotos(request: PhotoScene.Load.Request) {
         let dateString = request.date.convertToString(onFormat: "yyyy-M-d")
         worker?.fetchPhotos(camera: request.cameraName, date: dateString, completionHandler: { photos in
             if photos.count == 0 {
-                let newRequest = PhotoScene.Data.Request(cameraName: request.cameraName, date: request.date.dateByAdding(days: -1))
+                let newRequest = PhotoScene.Load.Request(cameraName: request.cameraName, date: request.date.dateByAdding(days: -1))
                 self.doRequestPhotos(request: newRequest)
             } else {
                 let response = PhotoScene.Load.Response(photos: photos)
                 self.presenter?.presentInitialData(response: response)
             }
         })
+    }
+    
+    func doLoadPhotoDetail(request: PhotoScene.PhotoDetail.Request) {
+        let response = PhotoScene.PhotoDetail.Response()
+        presenter?.presentPhotoDetail(response: response)
     }
 }

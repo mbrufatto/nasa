@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum RoverId: Int {
+enum CameraId: Int {
     case curiosity
     case opportunity
     case spirit

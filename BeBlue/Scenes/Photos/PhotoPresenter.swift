@@ -14,6 +14,7 @@ import UIKit
 
 protocol PhotoPresentationLogic {
     func presentInitialData(response: PhotoScene.Load.Response)
+    func presentPhotoDetail(response: PhotoScene.PhotoDetail.Response)
 }
 
 class PhotoPresenter: PhotoPresentationLogic {
@@ -24,5 +25,10 @@ class PhotoPresenter: PhotoPresentationLogic {
     func presentInitialData(response: PhotoScene.Load.Response) {
         let viewModel = PhotoScene.Load.ViewModel(photos: response.photos)
         viewController?.displayInitialData(viewModel: viewModel)
+    }
+    
+    func presentPhotoDetail(response: PhotoScene.PhotoDetail.Response) {
+        let viewModel = PhotoScene.PhotoDetail.ViewModel()
+        viewController?.displayPhotoDetail(viewModel: viewModel)
     }
 }

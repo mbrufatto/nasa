@@ -12,13 +12,10 @@ class NetworkManager {
     static let shared = NetworkManager()
     
     private let baseUrl = "https://api.nasa.gov/mars-photos/api/v1/rovers/"
-    private let demoKey = "IRGjQqIr2PcBMTrxSM4ShXi7LOZyt84tYjILhlA0"
+    private let demoKey = "xDhExNdyxbDHsEC17grhQSdmoxlz6YXspMc9Z7WU"
     private init() {}
     
     func getPhotos(withCameraAndDate camera:String, date: String, completionHandler: @escaping ([Photo]) -> Void ) {
-        
-        print(camera)
-        print(date)
         
         let url = URL(string: baseUrl + camera + "/photos?earth_date=\(date)&api_key=\(demoKey)")!
         
