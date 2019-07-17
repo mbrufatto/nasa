@@ -54,13 +54,4 @@ class PhotoDetailView: UIView {
             photo.heightAnchor.constraint(equalToConstant: 250)
         ])
     }
-    
-    func getImage(urlPhoto: String) {
-        self.photo.af_setImage( withURL: URL(string: urlPhoto)!,
-                                placeholderImage: UIImage(named: "lobo.jpg"),
-                                imageTransition: .crossDissolve(0.2),
-                                completion: { response in
-                                    self.photo.image = response.result.value
-        })
-    }
 }

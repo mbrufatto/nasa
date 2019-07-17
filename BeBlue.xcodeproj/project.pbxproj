@@ -53,6 +53,8 @@
 		00425C3122DE5E4D00A7EEE8 /* PhotoDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00425C2522DE5E4D00A7EEE8 /* PhotoDetailInteractor.swift */; };
 		00425C3422DE5E9800A7EEE8 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00425C3322DE5E9800A7EEE8 /* PhotoDetailView.swift */; };
 		00425C3522DE5E9800A7EEE8 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00425C3322DE5E9800A7EEE8 /* PhotoDetailView.swift */; };
+		00425C3722DFB53500A7EEE8 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00425C3622DFB53500A7EEE8 /* UIImageView.swift */; };
+		00425C3822DFB53500A7EEE8 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00425C3622DFB53500A7EEE8 /* UIImageView.swift */; };
 		901BE5421AEDF9023198C968 /* Pods_BeBlueTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59CA38D81043E3F8CD0413C0 /* Pods_BeBlueTests.framework */; };
 		CA4D790C71F461274BE4EF47 /* Pods_BeBlue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09C635A80D7F9E0A5487550 /* Pods_BeBlue.framework */; };
 /* End PBXBuildFile section */
@@ -98,6 +100,7 @@
 		00425C2422DE5E4D00A7EEE8 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		00425C2522DE5E4D00A7EEE8 /* PhotoDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailInteractor.swift; sourceTree = "<group>"; };
 		00425C3322DE5E9800A7EEE8 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
+		00425C3622DFB53500A7EEE8 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		233B23DED07AE07EE5CDF227 /* Pods-BeBlueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeBlueTests.release.xcconfig"; path = "Target Support Files/Pods-BeBlueTests/Pods-BeBlueTests.release.xcconfig"; sourceTree = "<group>"; };
 		59CA38D81043E3F8CD0413C0 /* Pods_BeBlueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeBlueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9EBF14CB637000ECB16CDC7 /* Pods-BeBlue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeBlue.release.xcconfig"; path = "Target Support Files/Pods-BeBlue/Pods-BeBlue.release.xcconfig"; sourceTree = "<group>"; };
@@ -240,6 +243,7 @@
 			children = (
 				002C496222CEB1D5006F586F /* UIView.swift */,
 				00425C1E22DE1EB100A7EEE8 /* DateExtension.swift */,
+				00425C3622DFB53500A7EEE8 /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -455,6 +459,7 @@
 				002C496922CEBB64006F586F /* PhotoCell.swift in Sources */,
 				00425C3422DE5E9800A7EEE8 /* PhotoDetailView.swift in Sources */,
 				00425C1D22DE1AF900A7EEE8 /* CameraId.swift in Sources */,
+				00425C3722DFB53500A7EEE8 /* UIImageView.swift in Sources */,
 				00425C2622DE5E4D00A7EEE8 /* PhotoDetailPresenter.swift in Sources */,
 				00425C2A22DE5E4D00A7EEE8 /* PhotoDetailRouter.swift in Sources */,
 				00425C1F22DE1EB100A7EEE8 /* DateExtension.swift in Sources */,
@@ -475,6 +480,7 @@
 				002C495522CEB055006F586F /* PhotoModels.swift in Sources */,
 				002C496722CEB21A006F586F /* PhotoCollectionView.swift in Sources */,
 				002C493C22CEACBC006F586F /* BeBlueTests.swift in Sources */,
+				00425C3822DFB53500A7EEE8 /* UIImageView.swift in Sources */,
 				00425C2B22DE5E4D00A7EEE8 /* PhotoDetailRouter.swift in Sources */,
 				00425C3122DE5E4D00A7EEE8 /* PhotoDetailInteractor.swift in Sources */,
 				002C494F22CEB055006F586F /* PhotoPresenter.swift in Sources */,

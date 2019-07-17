@@ -85,6 +85,6 @@ class PhotoDetailViewController: UIViewController, PhotoDetailDisplayLogic {
     
     func displayInitialData(viewModel: PhotoDetailScene.Load.ViewModel) {
         photoDetailView.camaraNameLabel.text = viewModel.photo.camera?.cameraName
-        photoDetailView.getImage(urlPhoto: viewModel.photo.urlPhoto)
+        photoDetailView.photo.getImage(urlImage: viewModel.photo.urlPhoto)
     }
 }
